@@ -53,8 +53,6 @@ function App() {
        picture = {dish.image} 
        rating = {dish.rating}/>
       ))}
-
-      
     </div>
   );
 }
