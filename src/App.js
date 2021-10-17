@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+//새로운 component를 넣고 싶을 때는 app안에 통합하여야 함
 
+
+//component는 uppercase로 시작해야한다
+function Food({name, image}){
+  return (<div>
+    <h1> I like {name}</h1>
+    <img src={image} alt={name}/>
+  </div>
+  );
+}
+
+const foodILike = [
+  {name : "goguma",
+  image : "http://aeriskitchen.com/wp-content/uploads/2008/09/kimchi_bokkeumbap_02-.jpg"},
+  {name : "gamza",
+  image : "http://health.chosun.com/site/data/img_dir/2020/05/07/2020050702573_0.jpg"}
+  ]
+
+//dist는 object 매우 중요!
+//component는 html을 반환하는 함수
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {foodILike.map(dish =>(
+       <Food name={dish.name} picture = {dish.image}/>
+      ))}
     </div>
   );
 }
