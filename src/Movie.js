@@ -17,7 +17,11 @@ function Movie({ year, title, summary, poster, genres }) {
           ))}
         </ul>
         <h6 className="movie__genres">{genres}</h6>
-        <p className="movie__summary">{summary}</p>
+        {summary.length < 140 ? (
+          <p className="movie__summary"> {summary} </p>
+        ) : (
+          <p className="movie__summary"> {summary.slice(0, 140)}...</p>
+        )}
       </div>
     </div>
   );
