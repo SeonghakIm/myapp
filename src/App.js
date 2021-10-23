@@ -3,16 +3,16 @@
 import React from "react";
 import About from "./routes/About";
 import Home from "./routes/Home";
+import Navigation from "./components/Navigation";
 import { HashRouter, Route } from "react-router-dom";
 
 
 function App(){
   return (
     <HashRouter>
-      <Route path="/about" component = {About}>
-      </Route>
-      <Route path="/" exact = {true} component = {Home}>
-      </Route>
+      <Navigation />
+      <Route path="/about" component = {About}></Route>
+      <Route path="/" exact = {true} component = {Home}></Route>
     </HashRouter>
   );
 }
