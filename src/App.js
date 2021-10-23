@@ -1,35 +1,24 @@
 //새로운 component를 넣고 싶을 때는 app안에 통합하여야 함
 
-import PropTypes from "prop-types";
 import React from "react";
 
 class App extends React.Component{
   state = {
-    count: 0
+    isLoading: true,
+    movies: []
   };
-  //setState를 호출할 때마다 react는 새로운 state와 함께 render를 다시해준다.
-  add = () =>{
-    this.setState(current => ({ count: current.count + 1}));
-  };
-  minus = () => {
-    this.setState(current => ({ count: current.count - 1}));
-  };
-  componentDidUpdate(){
-    console.log("I just updated");
-  }
+
   componentDidMount(){
-    console.log("component renderd");
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 3000);
   }
-  componentWillUnmount(){
-    console.log("goodbye");
-  }
+
   render(){
-    console.log("I'm rendering");
+    const { isLoading } = this.state;
     return (
       <div>
-        <h1>The number is: {this.state.count}</h1>
-        <button onClick={this.add} >add</button>
-        <button onClick={this.minus}>minus</button>
+        {isLoading ? "Loading" : "We are ready"}
       </div>);
   }
 }
