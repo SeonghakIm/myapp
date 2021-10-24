@@ -14,9 +14,10 @@ function App(){
       <Navigation />
       <Route path="/about" component = {About}></Route>
       <Route path="/" exact = {true} component = {Home}></Route>
-      <Route path="/movie-detail" component = {Detail}></Route>
+      <Route path="/movie/:id" component = {Detail}></Route>
     </HashRouter>
   );
 }
+
 
 export default App;
