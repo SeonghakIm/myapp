@@ -10,3 +10,8 @@ class App extends Components<{}, interfaceName>{
 
 }
 등의 형태로 state의 type을 정의해줄 수 있다.
+
+8.5
+props의 형태를 정할 때는
+const FunctionName: React.FunctionComponent<InterfaceName> = () =>
+과 같은 형태로 props의 interface를 명시해주어야한다.
