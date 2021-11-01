@@ -15,3 +15,8 @@ class App extends Components<{}, interfaceName>{
 props의 형태를 정할 때는
 const FunctionName: React.FunctionComponent<InterfaceName> = () =>
 과 같은 형태로 props의 interface를 명시해주어야한다.
+
+8.8
+theme을 사용하면 styled의 props내에서 theme안의 property들이 공유된다.
+props.theme.이름 등의 방법으로 사용가능하다.
+styled.d.ts에서 theme의 property들의 type을 지정해줄 수 있다.

@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.span<{ isBlue: boolean }>`
-  color: ${(props) => (props.isBlue ? "blue" : "black")};
+  background-color: ${(props) =>
+    props.isBlue ? props.theme.blueColor : "transparent"};
 `;
 
 interface IProps {
